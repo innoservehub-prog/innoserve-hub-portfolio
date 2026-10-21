@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="InnoServe Hub — technology, training and digital services connecting learning with practical skills.">
+<title>InnoServe Hub | Portfolio</title>
+<style>
+:root {
+  --navy:#142252; --navy-dark:#0d193f; --blue:#1684d8; --purple:#8950dc;
+  --ink:#202b43; --muted:#5d6880; --line:#d6deeb; --soft:#f2f5fc; --white:#fff;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family:Arial, Helvetica, sans-serif; color:var(--ink); background:#f7f9fd; line-height:1.55; }
+a { color:inherit; }
+.wrap { width:min(1120px, calc(100% - 36px)); margin:0 auto; }
+.topbar { background:var(--navy); color:white; }
+.hero { display:grid; grid-template-columns:250px 1fr; min-height:230px; align-items:stretch; }
+.logo-box { display:flex; align-items:center; justify-content:center; padding:26px; border-right:1px solid rgba(255,255,255,.35); }
+.logo-box img {
+    width: 200px;
+    max-height: 300px;
+    object-fit: contain;
+    display: block;
+}
+.logo-text { font-size:1.8rem; font-weight:800; letter-spacing:-1px; text-align:center; }
+.logo-text span { color:#62d8d3; }
+.hero-copy { padding:38px clamp(24px,4vw,52px); display:flex; flex-direction:column; justify-content:center; }
+.eyebrow { color:#9bd5ff; font-weight:800; font-size:.8rem; letter-spacing:.13em; text-transform:uppercase; }
+h1 { margin:10px 0 12px; font-size:clamp(1.9rem,4vw,3.25rem); line-height:1.08; letter-spacing:-.04em; }
+.hero-copy p { margin:0 0 10px; color:#e2e9fb; max-width:680px; }
+.registered { font-weight:800; font-size:.82rem; letter-spacing:.04em; }
+nav { background:#fff; border-bottom:1px solid var(--line); position:sticky; top:0; z-index:10; }
+.nav-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:56px; }
+.brand { font-weight:900; color:var(--navy); text-decoration:none; }
+.brand span { color:var(--purple); }
+.navlinks { display:flex; flex-wrap:wrap; gap:20px; }
+.navlinks a { font-size:.88rem; font-weight:700; color:#3b4862; text-decoration:none; }
+.navlinks a:hover { color:var(--blue); }
+.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin:24px auto 34px; border:1px solid var(--line); background:white; }
+.stat { padding:20px 22px; border-right:1px solid var(--line); }
+.stat:last-child { border-right:0; }
+.stat strong { display:block; color:var(--blue); font-size:1.08rem; margin-bottom:4px; }
+.stat p { margin:0; font-size:.91rem; color:#45516a; }
+section { scroll-margin-top:75px; }
+.section { padding:28px 0; }
+.section-title { margin:0 0 12px; color:var(--navy); font-size:clamp(1.55rem,3vw,2.2rem); letter-spacing:-.035em; }
+.intro { margin:0; color:#46536b; }
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { background:#fff; border:1px solid var(--line); padding:24px; }
+.panel h3 { margin:0 0 14px; color:var(--purple); font-size:1.12rem; }
+.item { margin:0 0 15px; }
+.item:last-child { margin-bottom:0; }
+.item h4 { margin:0 0 3px; color:#263650; font-size:.98rem; }
+.item p { margin:0; color:var(--muted); font-size:.93rem; }
+.experience-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.experience-card { background:var(--soft); border:1px solid var(--line); padding:20px; }
+.experience-card h3 { margin:0 0 7px; font-size:.98rem; color:var(--navy); }
+.experience-card p { margin:0; font-size:.92rem; color:#56627a; }
+.benefit-grid { display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--line); background:#fff; }
+.benefit { padding:20px; border-right:1px solid var(--line); }
+.benefit:last-child { border-right:0; }
+.benefit h3 { color:var(--purple); font-size:.95rem; margin:0 0 10px; }
+.benefit p { color:var(--muted); margin:0; font-size:.92rem; }
+.vision-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); background:#edf1ff; }
+.vision-card { padding:21px; border-right:1px solid var(--line); }
+.vision-card:last-child { border-right:0; }
+.vision-card h3 { margin:0 0 8px; color:var(--navy); font-size:.95rem; text-transform:uppercase; }
+.vision-card p { margin:0; color:#46516a; font-size:.92rem; }
+.contact { background:var(--navy); color:#fff; margin-top:34px; padding:32px 20px; text-align:center; }
+.contact h2 { margin:0 0 18px; font-size:1.35rem; }
+.contact-links { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; }
+.contact-links a { display:inline-block; padding:10px 14px; border:1px solid rgba(255,255,255,.25); border-radius:9px; color:#fff; text-decoration:none; font-size:.9rem; }
+.contact-links a:hover { background:rgba(255,255,255,.12); }
+.footer-tag { margin:24px 0 0; color:#b9c8ee; font-size:.78rem; font-weight:800; letter-spacing:.13em; }
+footer { text-align:center; padding:17px; color:#65718a; font-size:.82rem; }
+@media(max-width:760px) {
+ .hero { grid-template-columns:1fr; }
+ .logo-box { border-right:0; border-bottom:1px solid rgba(255,255,255,.3); padding:20px; }
+ .logo-box img { max-height:200px; width:auto; max-width:180px; }
+ .hero-copy { padding:25px 22px 30px; }
+ .nav-inner { align-items:flex-start; flex-direction:column; padding:12px 0; }
+ .navlinks { gap:12px; }
+ .stats,.two-col,.experience-grid,.benefit-grid,.vision-grid { grid-template-columns:1fr; }
+ .stat,.benefit,.vision-card { border-right:0; border-bottom:1px solid var(--line); }
+ .stat:last-child,.benefit:last-child,.vision-card:last-child { border-bottom:0; }
+ .section { padding:22px 0; }
+}
+</style>
+</head>
+<body>
+<header class="topbar" id="home">
+  <div class="wrap hero">
+    <div class="logo-box">
+      <img src="./Logo.png" alt="InnoServe Hub logo">
+    </div>
+    <div class="hero-copy">
+      <div class="eyebrow">Technology • Training • Innovation</div>
+      <h1>Connecting learning with practical skills.</h1>
+      <p>A technology, training and digital services initiative connecting learning with practical skills.</p>
+      <p class="registered">UDYAM / MSME-REGISTERED ENTERPRISE</p>
+      <p><a class="hero-cta" href="#about">Explore InnoServe Hub ↓</a></p>
+    </div>
+  </div>
+</header>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="brand" href="#home">InnoServe <span>Hub</span></a>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#events">Events</a><a href="#achievements">Achievements</a><a href="#services">What We Do</a><a href="#contact">Contact</a>
+      <details class="view-more">
+        <summary>View More</summary>
+        <div class="more-menu">
+          <a href="#why-us">Why Us?</a>
+          <a href="#institution-benefits">Institution Benefits</a>
+          <a href="#student-benefits">Student Benefits</a>
+          <a href="#vision">Vision & Mission</a>
+          <a href="#founder">Founder</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</nav>
+<main class="wrap">
+  <div class="stats" aria-label="Portfolio highlights">
+    <div class="stat" id="achievements"><strong>1,000+</strong><p>Students involved in workshop and hackathon activities</p></div>
+    <div class="stat"><strong>HANDS-ON</strong><p>Workshops, projects and mentorship</p></div>
+    <div class="stat"><strong>CAREER-FOCUSED</strong><p>Training, internships and digital skills</p></div>
+  </div>
+
+  <section class="section" id="about">
+    <h2 class="section-title">About InnoServe Hub</h2>
+    <p class="intro">InnoServe Hub is a technology, training and digital services enterprise focused on practical learning and career-oriented skill development for students and institutions. We connect theory with practice through workshops, technical services, internships, events and project-based learning.</p>
+  </section>
+
+  <section class="section" id="services">
+    <div class="two-col">
+      <div class="panel">
+        <h3>What We Do</h3>
+        <div class="item"><h4>Technology services</h4><p>Website development, frontend/backend development, UI/UX design, digital solutions and project support.</p></div>
+        <div class="item"><h4>Student skill development</h4><p>AI awareness, programming, web development, UI/UX training and mini-project guidance.</p></div>
+        <div class="item"><h4>Digital productivity</h4><p>PowerPoint, Excel, Word/Google Docs and document preparation.</p></div>
+      </div>
+      <div class="panel">
+        <h3>Programs & Events</h3>
+        <div class="item"><h4>Internships & mentorship</h4><p>Frontend, web, backend and UI/UX development with project-based learning.</p></div>
+        <div class="item"><h4>Technical activities</h4><p>Workshops, hackathons, innovation challenges, student competitions and school/college technology-awareness programmes.</p></div>
+        <div class="item"><h4>Learning approach</h4><p>Interactive sessions, practical exposure, real-world projects and career-oriented guidance.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="events">
+    <h2 class="section-title">Events & Experience</h2>
+    <div class="experience-grid">
+      <article class="experience-card"><h3>GENERATIVE AI</h3><p>Workshop at SIMATS Engineering.</p></article>
+      <article class="experience-card"><h3>TECHNICAL WORKSHOPS</h3><p>Workshop and hackathon activities involving 1,000+ students.</p></article>
+      <article class="experience-card"><h3>SCHOOL OUTREACH</h3><p>Technology-awareness and skill-development activities.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="benefit-grid">
+      <article class="benefit" id="why-us"><h3>WHY INNOSERVE HUB?</h3><p>Practical exposure, interactive learning, mentorship and skill development.</p></article>
+      <article class="benefit" id="institution-benefits"><h3>BENEFITS FOR INSTITUTIONS</h3><p>Technology programmes and workshops tailored to institutional needs.</p></article>
+      <article class="benefit" id="student-benefits"><h3>BENEFITS FOR STUDENTS</h3><p>Programming practice, project guidance, internship pathways and digital skills.</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="vision">
+    <div class="vision-grid">
+      <article class="vision-card"><h3>Our Vision</h3><p>Help students build practical skills, explore innovation and become career-ready.</p></article>
+      <article class="vision-card"><h3>Our Mission</h3><p>Empower learners through technology education, training, mentorship and real-world projects.</p></article>
+      <article class="vision-card" id="founder"><h3>Founder</h3><p><strong>Shruthi Sree R</strong><br>Founder, InnoServe Hub</p></article>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>LET’S CREATE OPPORTUNITIES TOGETHER</h2>
+    <div class="contact-links">
+      <a href="https://www.instagram.com/innoserve_hub?exln=dGF0aDV3MmFwd2k=" target="_blank" rel="noopener noreferrer">Instagram- innoserve_hub</a>
+      <a href="https://wa.me/916380630473" target="_blank" rel="noopener noreferrer">WhatsApp – 6380630473</a>
+      <a href="mailto:ishquantallp@gmail.com">Gmail – ishquantallp@gmail.com</a>
+    </div>
+    <p class="footer-tag">INNOSERVE HUB | IDEAS • CONNECT • SERVE • GROW</p>
+  </section>
+</main>
+<footer>© InnoServe Hub · Technology • Training • Innovation</footer>
+</body>
+</html>
